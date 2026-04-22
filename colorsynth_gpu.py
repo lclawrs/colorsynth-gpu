@@ -158,6 +158,12 @@ def var_moebius_transform(zLIN, zSIN, t=0.0):
     d = cp.exp(cp.complex(0, t / 2))
     return (a * zLIN + b) / (c * zLIN + d)
 
+def var_phase_shifting_julia_1357(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    c = -0.8 + 0.156j  # Julia set constant
+    z = zLIN + zSIN * cp.exp(1j * t)
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -178,6 +184,7 @@ VARIATIONS = [
     ("rotating_julia_params", var_rotating_julia_params),
     ("phase_shifting_julia", var_phase_shifting_julia),
     ("moebius_transform", var_moebius_transform),
+    ("phase_shifting_julia_1357", var_phase_shifting_julia_1357),
 ]
 
 # ---------------------------------------------------------------------------

@@ -458,3 +458,12 @@
 **Desc:** Julia sets evolve dynamically with phase-shifting parameters, creating a mesmerizing dance of patterns.
 **Art:** In phaseShiftingJulia, the Julia sets pirouette and waltz across the screen, their intricate patterns shifting and morphing in a hypnotic display of dynamic beauty.
 **Time:** 17s | video: ✓
+
+
+---
+## 2026-04-22 06:13 CDT
+**Task:** moebius_transform
+**Type:** variation
+**Desc:** A Möbius transform morphs the plane in a mesmerizing way, creating dynamic loops and swirls that evolve over time.
+**Art:** In the realm of moebius_transform, the plane winks and warps under the spell of a Möbius morph, weaving dynamic loops and swirls into a mesmerizing tapestry of ever-evolving elegance and motion.
+**Time:** 20s | video: ✗
