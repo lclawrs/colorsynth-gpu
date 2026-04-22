@@ -359,3 +359,12 @@
 **Desc:** Attractors that shift their phase over time create a mesmerizing, pulsating effect.
 **Art:** In phaseShiftingAttractors, mesmerizing forms undulate and shift, their attractor pulls becoming a dance of light and shadow, weaving a spell of perpetual motion that captivates the eye and soothes the soul.
 **Time:** 15s | video: ✗
+
+
+---
+## 2026-04-22 04:24 CDT
+**Task:** phaseShiftingAttractors
+**Type:** variation
+**Desc:** Phase-shifting attractors create a mesmerizing effect, where the pattern rotates and evolves smoothly over time, making for a dynamic and visually appealing animation.
+**Art:** In phaseShiftingAttractors, the hypnotic dance of shifting patterns weaves a spell of visual enchantment, as attractors pulse and rotate in a seamless symphony of motion, inviting the eye to wander through a constantly evolving tapestry of form and light.
+**Time:** 17s | video: ✗
