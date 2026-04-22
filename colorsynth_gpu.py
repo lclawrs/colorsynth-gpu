@@ -139,6 +139,12 @@ def var_fractal_zoom(zLIN, zSIN, t=0.0):
     z = z * z + zSIN * cp.exp(1j * t)
     return z
 
+def var_rotating_julia_params(zLIN, zSIN, t=0.0):
+    # Rotate Julia parameters over time
+    angle = t / 4
+    c = cp.complex(cp.cos(angle), cp.sin(angle))
+    return zLIN + c
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -156,6 +162,7 @@ VARIATIONS = [
     ("phase_shifting", var_phase_shifting),
     ("phase_shifting_1041", var_phase_shifting_1041),
     ("fractal_zoom", var_fractal_zoom),
+    ("rotating_julia_params", var_rotating_julia_params),
 ]
 
 # ---------------------------------------------------------------------------
