@@ -215,6 +215,12 @@ def var_lyapunov_dance(zLIN, zSIN, t=0.0):
         z = a * z + b * cp.abs(z) * cp.exp(1j * cp.angle(z))
     return z
 
+def var_phase_shifting_julia_2023(zLIN, zSIN, t=0.0):
+    # Phase shifting Julia set with time-varying parameters
+    c = -0.8 + 0.156j + cp.exp(1j * t / 4)
+    z = zLIN + zSIN * cp.exp(1j * t / 2)
+    return z ** 2 + c
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -243,6 +249,7 @@ VARIATIONS = [
     ("lyapunov_spirals", var_lyapunov_spirals),
     ("power_tower_zoom", var_power_tower_zoom),
     ("lyapunov_dance", var_lyapunov_dance),
+    ("phase_shifting_julia_2023", var_phase_shifting_julia_2023),
 ]
 
 # ---------------------------------------------------------------------------

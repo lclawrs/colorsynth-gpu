@@ -528,3 +528,11 @@
 **Desc:** Power towers z^z^z evolve and zoom over time, creating a fractal ballet of exponential growth and contraction, with colors pulsating and morphing in a mesmerizing display of mathematical beauty.
 **Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
 **Time:** 63s
+
+
+---
+## 2026-04-22 06:39 CDT
+**Task:** lyapunov_dance | **Type:** variation | **Name:** lyapunov_dance
+**Desc:** Lyapunov spirals evolve and dance over time, creating a fluid and dynamic pattern that pulsates and morphs, with colors shifting in a mesmerizing display of chaotic beauty.
+**Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
+**Time:** 90s
