@@ -196,30 +196,53 @@ def main():
     code = read_current_code()
 
     if add_type == "variation":
+        # Normalize: ensure function is named exactly def var_{add_name}(...)
+        add_code = re.sub(r"def\s+var_?\s*" + re.escape(add_name) + r"\s*\(", f"def var_{add_name}(", add_code)
+        # Also catch any stray def var<name> without underscore
+        add_code = re.sub(r"def\s+var([A-Za-z])", r"def var_\1", add_code)
         fn_prefix = f"def var_{add_name}"
         if fn_prefix in code:
             add_name += f"_{ts[-4:]}"
             add_code = re.sub(r"def var_\w+", f"def var_{add_name}", add_code, count=1)
+        # Inject function before VARIATIONS list
+        insert_marker = "\nVARIATIONS = ["
+        if insert_marker not in code:
+            print(f"  ERROR: VARIATIONS marker not found in code file!")
+            discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Code structure error, skipping.")
+            return
+        code = code.replace(insert_marker, f"\n{add_code}\n{insert_marker}")
+        # Inject entry at end of VARIATIONS list
+        end_marker = "\n]\n\n# ---------------------------------------------------------------------------\n# COLOR MAPPERS"
+        if end_marker not in code:
+            print(f"  ERROR: VARIATIONS end marker not found!")
+            discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Code structure error, skipping.")
+            return
         code = code.replace(
-            "\nVARIATIONS = [",
-            f"\n{add_code}\n\nVARIATIONS = ["
-        )
-        code = code.replace(
-            "\n]\n\n# ---------------------------------------------------------------------------\n# COLOR MAPPERS",
-            f'\n    ("{add_name}", var_{add_name}),\n]\n\n# ---------------------------------------------------------------------------\n# COLOR MAPPERS'
+            end_marker,
+            f'\n    ("{add_name}", var_{add_name}),{end_marker}'
         )
     else:
+        # Normalize colormap function name
+        add_code = re.sub(r"def\s+cmap_?\s*" + re.escape(add_name) + r"\s*\(", f"def cmap_{add_name}(", add_code)
+        add_code = re.sub(r"def\s+cmap([A-Za-z])", r"def cmap_\1", add_code)
         fn_prefix = f"def cmap_{add_name}"
         if fn_prefix in code:
             add_name += f"_{ts[-4:]}"
             add_code = re.sub(r"def cmap_\w+", f"def cmap_{add_name}", add_code, count=1)
+        insert_marker = "\nCOLORMAPS = {"
+        if insert_marker not in code:
+            print(f"  ERROR: COLORMAPS marker not found!")
+            discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Code structure error, skipping.")
+            return
+        code = code.replace(insert_marker, f"\n{add_code}\n{insert_marker}")
+        end_marker = '\n}\n\n# ---------------------------------------------------------------------------\n# IMAGE GENERATOR'
+        if end_marker not in code:
+            print(f"  ERROR: COLORMAPS end marker not found!")
+            discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Code structure error, skipping.")
+            return
         code = code.replace(
-            "\nCOLORMAPS = {",
-            f"\n{add_code}\n\nCOLORMAPS = {{"
-        )
-        code = code.replace(
-            '\n}\n\n# ---------------------------------------------------------------------------\n# IMAGE GENERATOR',
-            f'\n    "{add_name}":    cmap_{add_name},\n}}\n\n# ---------------------------------------------------------------------------\n# IMAGE GENERATOR'
+            end_marker,
+            f'\n    "{add_name}":    cmap_{add_name},{end_marker}'
         )
 
     ok, err = syntax_check_file(code)
@@ -242,9 +265,7 @@ def main():
     else:
         # New colormap — animate with a good base variation
         var_arg = random.choice(["spiral", "vortex", "tidal", "fourier", "julia"])
-        cmap_arg = add_name if add_name in ["cosmic_rainbow"] else "psychedelic"
-        # Fallback: if new colormap not in CLI choices, use psychedelic
-        cmap_arg = "psychedelic"  # safe fallback until argparse updated
+        cmap_arg = add_name  # colormap choices are dynamic from COLORMAPS.keys()
 
     video_out = str(REPO_DIR / f"anim_{ts}_{add_name}.mp4")
     print(f"  Rendering {VIDEO_FRAMES}f animation at {VIDEO_RES}...")
