@@ -126,6 +126,12 @@ def var_phase_shifting(zLIN, zSIN, t=0.0):
     # use t for animation!
     return zLIN * cp.exp(1j * (cp.angle(zLIN) + t / 4)) + zSIN * cp.exp(1j * (cp.angle(zSIN) + t / 2))
 
+def var_phase_shifting_3353(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    phase_shift = cp.sin(t) * 0.5 + 0.5
+    zSIN_shifted = zSIN * phase_shift
+    return zSIN_shifted
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -141,6 +147,7 @@ VARIATIONS = [
     ("twilight_tide", var_twilight_tide),
     ("nebula_cloud", var_nebula_cloud),
     ("phase_shifting", var_phase_shifting),
+    ("phase_shifting_3353", var_phase_shifting_3353),
 ]
 
 # ---------------------------------------------------------------------------
