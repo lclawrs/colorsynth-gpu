@@ -440,3 +440,12 @@
 **Desc:** Zooms into intricate fractal patterns, revealing new details and colors over time.
 **Art:** In this mesmerizing animation, a fractal zoom unfolds like a cosmic kaleidoscope, each iteration revealing a universe of swirling colors and infinitesimal details, as the boundaries of space and pattern dissolve into an ever-evolving symphony of the sublime.
 **Time:** 38s | video: ✓
+
+
+---
+## 2026-04-22 06:12 CDT
+**Task:** rotating julia params
+**Type:** variation
+**Desc:** Julia parameters rotate over time, creating a dynamic and ever-changing pattern that evolves beautifully with each frame.
+**Art:** In this mesmerizing animation, Julia parameters rotate with grace, painting a ever-evolving tapestry of patterns that dance and transform before the eye, a symphony of shapes and colors that speaks in the poetic language of motion and mathematics.
+**Time:** 15s | video: ✗

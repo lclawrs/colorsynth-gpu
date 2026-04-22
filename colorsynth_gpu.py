@@ -145,6 +145,11 @@ def var_rotating_julia_params(zLIN, zSIN, t=0.0):
     c = cp.complex(cp.cos(angle), cp.sin(angle))
     return zLIN + c
 
+def var_phase_shifting_julia(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    c = (zSIN + 1j * cp.sin(t)) * 0.5 + 0.75
+    return zLIN ** 2 + c
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -163,6 +168,7 @@ VARIATIONS = [
     ("phase_shifting_1041", var_phase_shifting_1041),
     ("fractal_zoom", var_fractal_zoom),
     ("rotating_julia_params", var_rotating_julia_params),
+    ("phase_shifting_julia", var_phase_shifting_julia),
 ]
 
 # ---------------------------------------------------------------------------
