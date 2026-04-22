@@ -122,6 +122,11 @@ def var_nebula_cloud(zLIN, zSIN, t=0.0):
     z = zLIN + cp.exp(cp.sin(zSIN * 4 + t * 2) * cp.pi * 1j)
     return z
 
+def var_phase_shifting(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    angle = cp.sin(zSIN * 2 + t) * 0.5 + 0.5
+    return zLIN * cp.exp(1j * angle * cp.pi)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -136,6 +141,7 @@ VARIATIONS = [
     ("quantum_decay", var_quantum_decay),
     ("twilight_tide", var_twilight_tide),
     ("nebula_cloud", var_nebula_cloud),
+    ("phase_shifting", var_phase_shifting),
 ]
 
 # ---------------------------------------------------------------------------
