@@ -15,6 +15,7 @@ DISCORD_CH   = "1496362899893911745"
 SHOWCASE_RES = "768x768"
 FRAMES       = 300   # 10s @ 30fps
 FPS          = 30
+DISCORD_MAX_BYTES = 7_500_000   # ~7.5MB — stay under Discord's 8MB limit
 
 def qwen(system, user, max_tokens=800, temperature=0.6):
     payload = {
@@ -37,6 +38,16 @@ def qwen(system, user, max_tokens=800, temperature=0.6):
 def run(cmd, cwd=None, check=False):
     return subprocess.run(cmd, shell=True, cwd=cwd or REPO_DIR,
                           capture_output=True, text=True, check=check)
+
+def compress_for_discord(src: Path) -> Path:
+    """Re-encode to H.264 at 480px, targeting <7.5MB for Discord upload."""
+    dst = src.with_suffix("_discord.mp4")
+    subprocess.run(
+        f'ffmpeg -i "{src}" -vf scale=480:480 -vcodec libx264 -crf 32 '
+        f'-preset fast -movflags +faststart -an "{dst}" -y -loglevel error',
+        shell=True, check=False
+    )
+    return dst if dst.exists() else src
 
 def discord_send(message=None, media=None):
     cmd = ["openclaw", "message", "send", "--channel", "discord", "--target", DISCORD_CH]
@@ -236,12 +247,16 @@ def main():
                 max_tokens=80, temperature=0.9).strip().strip('"')
 
             total = time.perf_counter() - t0
+            post_path = Path(out)
+            if post_path.stat().st_size > DISCORD_MAX_BYTES:
+                print(f"  Compressing for Discord ({post_path.stat().st_size//1024}KB → target <7.5MB)...")
+                post_path = compress_for_discord(post_path)
             msg = (
                 f"🎨 **{title}** *(showcase {i}/3)*\n"
                 f"> {art_desc}\n"
                 f"`{var_name}` + `{cmap}` · {FRAMES/FPS:.0f}s loop · {size_kb}KB · rendered in {render_time:.0f}s"
             )
-            discord_send(message=msg, media=out)
+            discord_send(message=msg, media=post_path)
         else:
             stderr_snip = result.stderr[:200] if result.stderr else "no output"
             print(f"  ✗ Render failed: {stderr_snip}")
