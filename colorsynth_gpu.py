@@ -190,6 +190,15 @@ def var_rotating_julia_1610(zLIN, zSIN, t=0.0):
     c = -0.8 + 0.156 * cp.cos(t) + 1j * 0.6 * cp.sin(t)
     return zLIN + c
 
+def var_lyapunov_spirals(zLIN, zSIN, t=0.0):
+    # Use t for animation!
+    a = 1.4 + 0.2 * cp.cos(t)
+    b = 0.3 + 0.1 * cp.sin(t)
+    z = zLIN * cp.exp(1j * zSIN)
+    for i in range(10):
+        z = a * z + b * cp.abs(z) * cp.exp(1j * cp.angle(z))
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -215,6 +224,7 @@ VARIATIONS = [
     ("moebius_transform_1520", var_moebius_transform_1520),
     ("rotating_julia_1550", var_rotating_julia_1550),
     ("rotating_julia_1610", var_rotating_julia_1610),
+    ("lyapunov_spirals", var_lyapunov_spirals),
 ]
 
 # ---------------------------------------------------------------------------
