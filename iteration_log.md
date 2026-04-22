@@ -107,3 +107,12 @@
 **Desc:** A phase-shifting color scheme that rotates hues over time, creating a mesmerizing color dance.
 **Art:** In phaseShifting, hues pirouette across the screen in a mesmerizing color ballet, each rotation a whisper of change, weaving a tapestry of shifting light that enchants the eye and soothes the soul.
 **Time:** 16s | video: ✗
+
+
+---
+## 2026-04-22 00:24 CDT
+**Task:** phaseShiftingColors
+**Type:** colormap
+**Desc:** Colors shift through the spectrum in a phase-locked loop, creating a mesmerizing rainbow effect that pulses and flows over time.
+**Art:** In phaseShiftingColors, a vibrant phase-locked loop weaves a hypnotic tapestry of shifting hues, as if the rainbow itself were pulsing with an eternal, fluid breath, dancing across the screen in a mesmerizing symphony of light.
+**Time:** 15s | video: ✗

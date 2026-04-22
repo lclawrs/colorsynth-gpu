@@ -143,6 +143,11 @@ def var_phase_shifting_attractors(zLIN, zSIN, t=0.0):
     z = zSIN * cp.exp(1j * cp.sin(cp.angle(zLIN) + t / 4))
     return z
 
+def var_phase_shifting_3353(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    phase = cp.sin(t) * 0.5 + 0.5
+    return zLIN * phase
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -161,6 +166,7 @@ VARIATIONS = [
     ("phase_shifting_3353", var_phase_shifting_3353),
     ("phasor_morph", var_phasor_morph),
     ("phase_shifting_attractors", var_phase_shifting_attractors),
+    ("phase_shifting_3353", var_phase_shifting_3353),
 ]
 
 # ---------------------------------------------------------------------------
