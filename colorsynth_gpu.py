@@ -413,6 +413,13 @@ def var_PHASE_SHIFTING(z):
     b = cp.abs(z) * cp.tanh(cp.angle(z) + t)
     return r, g, b
 
+def var_PHASE_SHIFTING(z):
+    t = 0.0
+    r = cp.abs(z) * cp.cos(cp.angle(z) + t)
+    g = cp.abs(z) * cp.sin(cp.angle(z) + t)
+    b = cp.abs(z) * cp.tanh(cp.angle(z) + t)
+    return r, g, b
+
 COLORMAPS = {
     "original":    cmap_original,
     "psychedelic": cmap_psychedelic,
@@ -430,6 +437,7 @@ COLORMAPS = {
     "phase_shifting_4352":    cmap_phase_shifting_4352,
     "phase_shifting_colors":    cmap_phase_shifting_colors,
     "phase_shifting_1352":    cmap_phase_shifting_1352,
+    "phase_shifting_0353":    cmap_phase_shifting_0353,
 }
 
 # ---------------------------------------------------------------------------
