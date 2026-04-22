@@ -476,3 +476,12 @@
 **Desc:** Julia sets evolve smoothly over time, creating a mesmerizing phase-shifted animation.
 **Art:** In phaseShiftingJulia, the intricate landscapes of Julia sets morph and pulse with ethereal grace, their shapes shifting like dreams in the mist, weaving a mesmerizing tapestry of mathematical poetry.
 **Time:** 17s | video: ✓
+
+
+---
+## 2026-04-22 06:14 CDT
+**Task:** moebius_transform
+**Type:** variation
+**Desc:** Möbius transformations create dynamic, swirling patterns that rotate and morph over time, producing a mesmerizing visual effect.
+**Art:** In the generative animation "Möbius Transformations," a kaleidoscope of swirling patterns dances across the screen, each transformation a fluid, ever-evolving tapestry that defies the boundaries of space and time, drawing the viewer into a mesmerizing odyssey of visual poetry.
+**Time:** 20s | video: ✗

@@ -99,14 +99,16 @@ def read_current_code():
     return CODE_FILE.read_text()
 
 
-def runtime_test(code_str):
+def runtime_test(code_str, var_name=None, cmap_name=None):
     """Quick render test — generates 1 frame at tiny resolution to catch runtime errors."""
     with tempfile.NamedTemporaryFile(suffix=".py", mode="w", delete=False, dir=REPO_DIR) as tf:
         tf.write(code_str)
         tf_name = tf.name
     out = str(REPO_DIR / "_runtime_test.png")
+    var_arg = f"--variation {var_name}" if var_name else ""
+    cmap_arg = f"--colormap {cmap_name}" if cmap_name else ""
     r = subprocess.run(
-        f"python3 {tf_name} --mode image --resolution 32x32 --output {out}",
+        f"python3 {tf_name} --mode image --resolution 32x32 {var_arg} {cmap_arg} --output {out}",
         shell=True, cwd=REPO_DIR, capture_output=True, text=True, timeout=30
     )
     os.unlink(tf_name)
@@ -154,6 +156,11 @@ CODE_SYSTEM = textwrap.dedent("""
     For variation: fn(zLIN, zSIN, t=0.0) → complex array. Use t to animate!
     For colormap: fn(z) → (r, g, b). Can also take t if needed.
     Use cp.sin, cp.cos, cp.exp, cp.abs, cp.real, cp.imag, cp.power, cp.tanh.
+    
+    CRITICAL: cp.complex() does NOT exist! Use Python complex literals or arithmetic:
+    - WRONG: cp.complex(real, imag)
+    - RIGHT: real_val + 1j * imag_val  (e.g., cp.cos(t) + 1j * cp.sin(t))
+    
     No markdown. Pure JSON only.
 """).strip()
 
@@ -272,7 +279,8 @@ def main():
         discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Syntax error, skipping this cycle.")
         return
 
-    ok2, err2 = runtime_test(code)
+    ok2, err2 = runtime_test(code, var_name=add_name if add_type == "variation" else None,
+                              cmap_name=add_name if add_type == "colormap" else None)
     if not ok2:
         print(f"  Runtime error after injection: {err2[:200]}")
         discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Runtime error (`{err2[:120]}`), skipping this cycle.")
