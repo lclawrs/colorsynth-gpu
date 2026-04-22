@@ -111,6 +111,11 @@ PLAN_SYSTEM = textwrap.dedent("""
     Think about what changes beautifully over time — rotating fields, pulsing patterns,
     morphing attractors, phase-shifting colors, evolving symmetry.
     
+    IMPORTANT: Be diverse! Avoid plain phase-angle tricks (they produce static/boring output).
+    Great ideas: fractal zoom, Möbius transforms, Newton's method attractors, 
+    burning ship, Lyapunov spirals, custom colormaps (fire/ice/neon), domain warping,
+    power towers z^z^z, sinh/cosh distortions, rotating Julia params, etc.
+    
     Reply ONLY as JSON:
     {"task": "short name", "description": "2-3 sentences", "type": "variation|colormap"}
 """).strip()
@@ -279,7 +284,7 @@ def main():
     )
     vid_time = time.perf_counter() - t0
 
-    if Path(video_out).exists() and Path(video_out).stat().st_size > 10000:
+    if Path(video_out).exists() and Path(video_out).stat().st_size > 50000:
         video_path = video_out
         print(f"  ✓ Video: {vid_time:.0f}s, {Path(video_out).stat().st_size//1024}KB")
     else:
