@@ -279,6 +279,12 @@ def var_NAME(z):
     hue = (phase + t) % (2 * cp.pi) / (2 * cp.pi)
     return cp.array([hue, (hue + 1/3) % 1, (hue + 2/3) % 1]).T
 
+def var_PHASE_SHIFT_COLORS(z):
+    r = cp.abs(z) * cp.sin(cp.angle(z) + t)
+    g = cp.abs(z) * cp.cos(cp.angle(z) + t)
+    b = cp.abs(z) * cp.tanh(cp.angle(z) + t)
+    return cp.stack([r, g, b], axis=-1)
+
 COLORMAPS = {
     "original":    cmap_original,
     "psychedelic": cmap_psychedelic,
@@ -290,6 +296,7 @@ COLORMAPS = {
     "phase_shifting":    cmap_phase_shifting,
     "phase_shifting":    cmap_phase_shifting,
     "phase_shifting_colors":    cmap_phase_shifting_colors,
+    "phase_shift_colors":    cmap_phase_shift_colors,
 }
 
 # ---------------------------------------------------------------------------
