@@ -350,3 +350,12 @@
 **Desc:** Phase-shifting colors create a mesmerizing visual effect where colors smoothly transition and pulse over time, adding depth and movement to the animation.
 **Art:** In the animation "phaseShifting," colors dance in a fluid symphony, their hues shifting and blending in a mesmerizing cascade, as if the very fabric of light itself is rippling and pulsing with an ethereal life of its own.
 **Time:** 14s | video: ✗
+
+
+---
+## 2026-04-22 04:24 CDT
+**Task:** phaseShiftingAttractors
+**Type:** variation
+**Desc:** Attractors that shift their phase over time create a mesmerizing, pulsating effect.
+**Art:** In phaseShiftingAttractors, mesmerizing forms undulate and shift, their attractor pulls becoming a dance of light and shadow, weaving a spell of perpetual motion that captivates the eye and soothes the soul.
+**Time:** 15s | video: ✗
