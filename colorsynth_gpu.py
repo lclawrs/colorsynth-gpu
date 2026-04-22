@@ -187,6 +187,11 @@ def var_phase_shifting_attractors_4353(zLIN, zSIN, t=0.0):
     z = zLIN * cp.exp(1j * cp.angle(zSIN) * phase_shift)
     return z
 
+def var_time_warped_julia(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    c = (cp.cos(t) + 1j * cp.sin(t)) * 0.8 + 0.2 * cp.exp(1j * cp.pi * cp.abs(zLIN))
+    return zLIN + zSIN * cp.tanh(c * zLIN)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -213,6 +218,7 @@ VARIATIONS = [
     ("phasor_morph", var_phasor_morph),
     ("phase_shifting_attractors_3353", var_phase_shifting_attractors_3353),
     ("phase_shifting_attractors_4353", var_phase_shifting_attractors_4353),
+    ("time_warped_julia", var_time_warped_julia),
 ]
 
 # ---------------------------------------------------------------------------

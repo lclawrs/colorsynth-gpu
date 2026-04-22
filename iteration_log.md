@@ -197,3 +197,12 @@
 **Desc:** Attractors that shift phase over time, creating a mesmerizing dance of shapes and colors.
 **Art:** In phase_shifting_attractors, a dynamic ballet unfolds where shapes and hues weave an enchanting symphony of motion, each attractor a whispering dancer in a kaleidoscope of color, shifting phases to create a mesmerizing fluidity of form and light.
 **Time:** 17s | video: ✗
+
+
+---
+## 2026-04-22 01:54 CDT
+**Task:** phaseShifting
+**Type:** colormap
+**Desc:** Phase-shifting colors create a mesmerizing effect where colors smoothly transition and change over time, giving the animation a dynamic and fluid look.
+**Art:** In the generative animation "phaseShifting," colors dance in a hypnotic waltz, their hues subtly shifting and morphing like the phases of the moon, creating a mesmerizingly dynamic and fluid visual symphony.
+**Time:** 16s | video: ✗
