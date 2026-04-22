@@ -206,3 +206,12 @@
 **Desc:** Phase-shifting colors create a mesmerizing effect where colors smoothly transition and change over time, giving the animation a dynamic and fluid look.
 **Art:** In the generative animation "phaseShifting," colors dance in a hypnotic waltz, their hues subtly shifting and morphing like the phases of the moon, creating a mesmerizingly dynamic and fluid visual symphony.
 **Time:** 16s | video: ✗
+
+
+---
+## 2026-04-22 02:04 CDT
+**Task:** timeWarpedJulia
+**Type:** variation
+**Desc:** A Julia set that warps and morphs over time, creating dynamic and ever-changing patterns.
+**Art:** In timeWarpedJulia, the Julia set dances a fluid waltz, its patterns warping and morphing like ethereal clouds caught in a perpetual twilight, each frame a new symphony of fractal beauty.
+**Time:** 16s | video: ✗
