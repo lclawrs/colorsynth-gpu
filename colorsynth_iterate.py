@@ -99,6 +99,22 @@ def read_current_code():
     return CODE_FILE.read_text()
 
 
+def runtime_test(code_str):
+    """Quick render test — generates 1 frame at tiny resolution to catch runtime errors."""
+    with tempfile.NamedTemporaryFile(suffix=".py", mode="w", delete=False, dir=REPO_DIR) as tf:
+        tf.write(code_str)
+        tf_name = tf.name
+    out = str(REPO_DIR / "_runtime_test.png")
+    r = subprocess.run(
+        f"python3 {tf_name} --mode image --resolution 32x32 --output {out}",
+        shell=True, cwd=REPO_DIR, capture_output=True, text=True, timeout=30
+    )
+    os.unlink(tf_name)
+    if Path(out).exists():
+        Path(out).unlink()
+    return r.returncode == 0, r.stderr[-300:] if r.stderr else ""
+
+
 # ── Qwen planning ─────────────────────────────────────────────────────────────
 
 PLAN_SYSTEM = textwrap.dedent("""
@@ -254,6 +270,12 @@ def main():
     if not ok:
         print(f"  Syntax error after injection: {err[:200]}")
         discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Syntax error, skipping this cycle.")
+        return
+
+    ok2, err2 = runtime_test(code)
+    if not ok2:
+        print(f"  Runtime error after injection: {err2[:200]}")
+        discord_send(f"🎨 **ColorSynth** — `{task_name}`\n⚠️ Runtime error (`{err2[:120]}`), skipping this cycle.")
         return
 
     CODE_FILE.write_text(code)

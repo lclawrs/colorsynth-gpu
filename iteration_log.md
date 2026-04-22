@@ -449,3 +449,12 @@
 **Desc:** Julia parameters rotate over time, creating a dynamic and ever-changing pattern that evolves beautifully with each frame.
 **Art:** In this mesmerizing animation, Julia parameters rotate with grace, painting a ever-evolving tapestry of patterns that dance and transform before the eye, a symphony of shapes and colors that speaks in the poetic language of motion and mathematics.
 **Time:** 15s | video: ✗
+
+
+---
+## 2026-04-22 06:13 CDT
+**Task:** phaseShiftingJulia
+**Type:** variation
+**Desc:** Julia sets evolve dynamically with phase-shifting parameters, creating a mesmerizing dance of patterns.
+**Art:** In phaseShiftingJulia, the Julia sets pirouette and waltz across the screen, their intricate patterns shifting and morphing in a hypnotic display of dynamic beauty.
+**Time:** 17s | video: ✓
