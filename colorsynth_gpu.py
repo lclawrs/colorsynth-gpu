@@ -132,6 +132,13 @@ def var_phase_shifting_1041(zLIN, zSIN, t=0.0):
     phase = cp.sin(t) * cp.angle(zLIN) + cp.cos(t) * cp.angle(zSIN)
     return cp.exp(1j * phase)
 
+def var_fractal_zoom(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    scale = 1 + cp.sin(t) * 0.5
+    z = zLIN * scale
+    z = z * z + zSIN * cp.exp(1j * t)
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -148,6 +155,7 @@ VARIATIONS = [
     ("nebula_cloud", var_nebula_cloud),
     ("phase_shifting", var_phase_shifting),
     ("phase_shifting_1041", var_phase_shifting_1041),
+    ("fractal_zoom", var_fractal_zoom),
 ]
 
 # ---------------------------------------------------------------------------
