@@ -296,3 +296,12 @@
 **Desc:** A vortex that rotates and changes color over time, creating a dynamic and visually appealing animation.
 **Art:** In the generative animation "rotating_vortex," a swirling maelstrom of color dances and shifts, its vibrant hues spinning into existence like a kaleidoscope of light, weaving an enchanting tapestry of motion that both captivates and mesmerizes the viewer.
 **Time:** 15s | video: ✗
+
+
+---
+## 2026-04-22 03:34 CDT
+**Task:** phaseShiftingColors
+**Type:** variation
+**Desc:** Phase-shifting colors create a mesmerizing, ever-changing visual experience that pulses and rotates smoothly over time.
+**Art:** In phaseShiftingColors, hues dance in a fluid, kaleidoscopic waltz, their phase-shifted harmony spinning and pulsing with an enchanting rhythm that captures the very essence of perpetual motion and color's timeless allure.
+**Time:** 15s | video: ✗
