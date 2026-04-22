@@ -305,3 +305,12 @@
 **Desc:** Phase-shifting colors create a mesmerizing, ever-changing visual experience that pulses and rotates smoothly over time.
 **Art:** In phaseShiftingColors, hues dance in a fluid, kaleidoscopic waltz, their phase-shifted harmony spinning and pulsing with an enchanting rhythm that captures the very essence of perpetual motion and color's timeless allure.
 **Time:** 15s | video: ✗
+
+
+---
+## 2026-04-22 03:34 CDT
+**Task:** phaseShiftingAttractors
+**Type:** variation
+**Desc:** Morphing attractors that shift in phase over time, creating a pulsating, organic feel.
+**Art:** Morphing attractors dance in a symphony of shifting phases, their forms pulsating with an organic, life-like motion that invites the viewer into a mesmerizing, ever-evolving tableau of fluid beauty.
+**Time:** 16s | video: ✗
