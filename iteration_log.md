@@ -233,3 +233,12 @@
 **Desc:** A field that warps and distorts over time, creating a mesmerizing flow of shapes and colors.
 **Art:** In "time_warp," a mesmerizing dance of shapes and hues unfolds, as the very fabric of the field distorts and warps with the passage of time, weaving a poetic tapestry of ever-evolving form and color.
 **Time:** 16s | video: ✗
+
+
+---
+## 2026-04-22 02:24 CDT
+**Task:** phasor_morph
+**Type:** variation
+**Desc:** A morphing phase between attractors creates a pulsing, rotating field that evolves smoothly over time.
+**Art:** In phasor_morph, a harmonious dance unfolds as attractors pulse and rotate, weaving a mesmerizing tapestry of evolving forms that seem to breathe with the rhythm of the cosmos.
+**Time:** 15s | video: ✗
