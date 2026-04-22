@@ -544,3 +544,11 @@
 **Desc:** Julia set attractors phase shift over time, creating a mesmerizing dance of intricate patterns that evolve and morph, with colors pulsating and shifting in a fluid, dynamic display.
 **Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
 **Time:** 38s
+
+
+---
+## 2026-04-22 07:09 CDT
+**Task:** rotating_moebius_transform | **Type:** variation | **Name:** rotating_moebius_transform
+**Desc:** Möbius transforms rotate and morph over time, creating a seamless and mesmerizing animation of complex patterns that twist and flow in a fluid, dynamic display.
+**Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
+**Time:** 76s
