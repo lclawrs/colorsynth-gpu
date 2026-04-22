@@ -536,3 +536,11 @@
 **Desc:** Lyapunov spirals evolve and dance over time, creating a fluid and dynamic pattern that pulsates and morphs, with colors shifting in a mesmerizing display of chaotic beauty.
 **Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
 **Time:** 90s
+
+
+---
+## 2026-04-22 06:58 CDT
+**Task:** phase_shifting_julia_2023 | **Type:** variation | **Name:** phase_shifting_julia_2023
+**Desc:** Julia set attractors phase shift over time, creating a mesmerizing dance of intricate patterns that evolve and morph, with colors pulsating and shifting in a fluid, dynamic display.
+**Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
+**Time:** 38s

@@ -221,6 +221,14 @@ def var_phase_shifting_julia_2023(zLIN, zSIN, t=0.0):
     z = zLIN + zSIN * cp.exp(1j * t / 2)
     return z ** 2 + c
 
+def var_rotating_moebius_transform(zLIN, zSIN, t=0.0):
+    # Möbius transform with rotation
+    a = cp.exp(1j * t)
+    b = cp.cos(t)
+    c = cp.sin(t)
+    d = cp.exp(1j * t)
+    return (a * zLIN + b * zSIN) / (c * zLIN + d)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -250,6 +258,7 @@ VARIATIONS = [
     ("power_tower_zoom", var_power_tower_zoom),
     ("lyapunov_dance", var_lyapunov_dance),
     ("phase_shifting_julia_2023", var_phase_shifting_julia_2023),
+    ("rotating_moebius_transform", var_rotating_moebius_transform),
 ]
 
 # ---------------------------------------------------------------------------
