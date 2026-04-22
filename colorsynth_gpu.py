@@ -132,6 +132,12 @@ def var_phase_shifting_3353(zLIN, zSIN, t=0.0):
     zSIN_shifted = zSIN * phase_shift
     return zSIN_shifted
 
+def varphasor_morph(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    angle = cp.angle(zLIN) + t
+    radius = cp.abs(zLIN) * cp.tanh(t)
+    return radius * cp.exp(1j * angle)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -148,6 +154,7 @@ VARIATIONS = [
     ("nebula_cloud", var_nebula_cloud),
     ("phase_shifting", var_phase_shifting),
     ("phase_shifting_3353", var_phase_shifting_3353),
+    ("phasor_morph", var_phasor_morph),
 ]
 
 # ---------------------------------------------------------------------------
