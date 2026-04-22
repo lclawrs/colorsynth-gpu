@@ -467,3 +467,12 @@
 **Desc:** A Möbius transform morphs the plane in a mesmerizing way, creating dynamic loops and swirls that evolve over time.
 **Art:** In the realm of moebius_transform, the plane winks and warps under the spell of a Möbius morph, weaving dynamic loops and swirls into a mesmerizing tapestry of ever-evolving elegance and motion.
 **Time:** 20s | video: ✗
+
+
+---
+## 2026-04-22 06:14 CDT
+**Task:** phaseShiftingJulia
+**Type:** variation
+**Desc:** Julia sets evolve smoothly over time, creating a mesmerizing phase-shifted animation.
+**Art:** In phaseShiftingJulia, the intricate landscapes of Julia sets morph and pulse with ethereal grace, their shapes shifting like dreams in the mist, weaving a mesmerizing tapestry of mathematical poetry.
+**Time:** 17s | video: ✓
