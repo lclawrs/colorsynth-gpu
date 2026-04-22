@@ -138,6 +138,11 @@ def varphasor_morph(zLIN, zSIN, t=0.0):
     radius = cp.abs(zLIN) * cp.tanh(t)
     return radius * cp.exp(1j * angle)
 
+def var_phase_shifting_attractors(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    z = zSIN * cp.exp(1j * cp.sin(cp.angle(zLIN) + t / 4))
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -155,6 +160,7 @@ VARIATIONS = [
     ("phase_shifting", var_phase_shifting),
     ("phase_shifting_3353", var_phase_shifting_3353),
     ("phasor_morph", var_phasor_morph),
+    ("phase_shifting_attractors", var_phase_shifting_attractors),
 ]
 
 # ---------------------------------------------------------------------------

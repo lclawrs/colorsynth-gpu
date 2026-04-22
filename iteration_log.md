@@ -80,3 +80,12 @@
 **Desc:** A morphing phase between attractors, creating a smooth transition of patterns and colors that pulsate and rotate.
 **Art:** In "phasor_morph," the morphing phase weaves a tapestry of shifting patterns and hues, where attractors pulse and rotate in a harmonious dance, painting the screen with ever-evolving colors and forms that seem to breathe and pulse with life.
 **Time:** 16s | video: ✗
+
+
+---
+## 2026-04-21 23:54 CDT
+**Task:** phase_shifting
+**Type:** colormap
+**Desc:** Phase-shifting colors create a mesmerizing wave effect that pulses and flows, adding a dynamic visual rhythm to the animation.
+**Art:** In phase_shifting, a symphony of colors dances through the screen, their phases subtly out of sync, creating a mesmerizing wave that pulses and flows with a dynamic rhythm that captivates the eye and sets the soul to swaying.
+**Time:** 17s | video: ✗
