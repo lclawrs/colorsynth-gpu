@@ -170,3 +170,12 @@
 **Desc:** A phase-shifting animation that smoothly transitions between different color patterns, creating a mesmerizing visual effect.
 **Art:** phaseShiftingweaves a hypnotic tapestry of color, where hues dance and shift in a smooth, fluid motion, captivating the eye with an ever-evolving palette of patterns that seem to breathe and pulse with life.
 **Time:** 15s | video: ✗
+
+
+---
+## 2026-04-22 01:24 CDT
+**Task:** phasor_morph
+**Type:** variation
+**Desc:** A phasor morph animation that evolves smoothly over time, creating a pulsating, swirling effect.
+**Art:** In phasor_morph, time weaves an ever-evolving tapestry of light, where swirling hues pulse and morph in a fluid dance, spinning the static into a vibrant, ever-changing symphony of color.
+**Time:** 15s | video: ✗
