@@ -118,6 +118,10 @@ def var_twilight_tide(zLIN, zSIN, t=0.0):
     zLIN = zLIN * cp.exp(1j * freq * t)
     return zLIN + zSIN
 
+def var_nebula_cloud(zLIN, zSIN, t=0.0):
+    z = zLIN + cp.exp(cp.sin(zSIN * 4 + t * 2) * cp.pi * 1j)
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -131,6 +135,7 @@ VARIATIONS = [
     ("vortex",       var_vortex),
     ("quantum_decay", var_quantum_decay),
     ("twilight_tide", var_twilight_tide),
+    ("nebula_cloud", var_nebula_cloud),
 ]
 
 # ---------------------------------------------------------------------------

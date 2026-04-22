@@ -112,6 +112,12 @@ def var_quantum_decay(zLIN, zSIN, t=0.0):
     z = zLIN * cp.exp(-decay_rate * t) + zSIN * cp.exp(1j * t)
     return z
 
+def var_twilight_tide(zLIN, zSIN, t=0.0):
+    freq = 0.1 + cp.sin(t * 0.1) * 0.4
+    zSIN = zSIN * cp.exp(-0.01 * cp.abs(zLIN))
+    zLIN = zLIN * cp.exp(1j * freq * t)
+    return zLIN + zSIN
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -124,6 +130,7 @@ VARIATIONS = [
     ("tidal",        var_tidal),
     ("vortex",       var_vortex),
     ("quantum_decay", var_quantum_decay),
+    ("twilight_tide", var_twilight_tide),
 ]
 
 # ---------------------------------------------------------------------------
