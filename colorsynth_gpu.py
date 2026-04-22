@@ -199,6 +199,13 @@ def var_lyapunov_spirals(zLIN, zSIN, t=0.0):
         z = a * z + b * cp.abs(z) * cp.exp(1j * cp.angle(z))
     return z
 
+def var_power_tower_zoom(zLIN, zSIN, t=0.0):
+    # Use t to create smooth evolution and zoom
+    z = zLIN + zSIN * cp.exp(1j * t)
+    z = cp.power(z, z, z)  # Power tower z^z^z
+    z = z * cp.exp(0.1 * cp.cos(t) * cp.pi * 1j)  # Zoom and rotation
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -225,6 +232,7 @@ VARIATIONS = [
     ("rotating_julia_1550", var_rotating_julia_1550),
     ("rotating_julia_1610", var_rotating_julia_1610),
     ("lyapunov_spirals", var_lyapunov_spirals),
+    ("power_tower_zoom", var_power_tower_zoom),
 ]
 
 # ---------------------------------------------------------------------------

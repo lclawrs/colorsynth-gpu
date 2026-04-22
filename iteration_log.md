@@ -512,3 +512,11 @@
 **Desc:** Julia set parameters rotate over time, creating a dynamic and ever-changing pattern.
 **Art:** In this mesmerizing animation, the Julia set parameters pirouette and spin like celestial dancers, weaving an ever-evolving tapestry of intricate fractal beauty that defies static form, embracing the infinite possibilities of motion and change.
 **Time:** 15s | video: ✓
+
+
+---
+## 2026-04-22 06:19 CDT
+**Task:** lyapunov_spirals | **Type:** variation | **Name:** lyapunov_spirals
+**Desc:** Spirals of chaos unfold and morph over time, creating a mesmerizing dance of color and complexity.
+**Result:** ✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)
+**Time:** 91s
