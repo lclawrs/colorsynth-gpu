@@ -217,6 +217,13 @@ def cmap_cosmic_rainbow(z):
     b = cp.where(cp.abs(z) < 1, cp.sin(cp.angle(z) * 6) * 0.5 + 0.5, 0.0)
     return r, g, b
 
+def var_PHASE_SHIFTING_COLORS(z):
+    t = 0.0
+    r = cp.sin(cp.abs(z) + t) * 0.5 + 0.5
+    g = cp.sin(cp.abs(z) + t + cp.pi / 2) * 0.5 + 0.5
+    b = cp.sin(cp.abs(z) + t + cp.pi) * 0.5 + 0.5
+    return r, g, b
+
 COLORMAPS = {
     "original":    cmap_original,
     "psychedelic": cmap_psychedelic,
@@ -224,6 +231,7 @@ COLORMAPS = {
     "fire":        cmap_fire,
     "palette":     cmap_palette,
     "cosmic_rainbow":    cmap_cosmic_rainbow,
+    "phase_shifting_colors":    cmap_phase_shifting_colors,
 }
 
 # ---------------------------------------------------------------------------
