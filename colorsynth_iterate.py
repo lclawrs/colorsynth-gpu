@@ -178,11 +178,26 @@ def main():
     current_code = read_current_code()
     code_lines   = current_code.count("\n")
 
+    # ── Build context from current codebase + recent log ──────────────────
+    var_names  = re.findall(r'def var_(\w+)\(', current_code)
+    cmap_names = re.findall(r'def cmap_(\w+)\(', current_code)
+
+    # Recent log: last ~600 chars
+    recent_log = ""
+    if LOG_FILE.exists():
+        log_text = LOG_FILE.read_text()
+        recent_log = log_text[-600:].strip()
+
     # ── Step 1: Plan ──────────────────────────────────────────────────────
     plan_user = (
-        f"Current variations: original, conjugate, exponential, mandelbrot, hyperbolic, "
-        f"fourier, julia, spiral, tidal, vortex + any Qwen additions.\n"
-        f"Pick something new that will animate beautifully. Think: what moves, pulses, rotates, morphs."
+        f"CURRENT STATE of colorsynth_gpu.py:\n"
+        f"  Variations ({len(var_names)}): {', '.join(var_names)}\n"
+        f"  Colormaps ({len(cmap_names)}): {', '.join(cmap_names)}\n\n"
+        f"RECENT ITERATION LOG (last entries):\n{recent_log}\n\n"
+        f"Based on what's already there and what recently worked/failed, "
+        f"decide what to do next: fix a broken idea, improve an existing one, "
+        f"or add something entirely new. Be specific and creative. "
+        f"Avoid repeating names already in the variation/colormap lists above."
     )
     plan_raw, plan_usage = qwen(PLAN_SYSTEM, plan_user, max_tokens=200, temperature=0.8)
     print(f"  Plan: {plan_usage.get('completion_tokens',0)} tokens")
@@ -202,6 +217,8 @@ def main():
         f"Task: {task_name}\n"
         f"Description: {task_desc}\n"
         f"Type: {task_type}\n"
+        f"Existing variations: {', '.join(var_names)}\n"
+        f"Existing colormaps: {', '.join(cmap_names)}\n"
         f"IMPORTANT: use the `t` parameter (0→2π) to create beautiful animation. "
         f"The formula should evolve smoothly as t increases.\n"
         f"Write one {'variation function var_NAME(zLIN, zSIN, t=0.0)' if task_type=='variation' else 'colormap function cmap_NAME(z)'} as JSON."
@@ -360,7 +377,12 @@ def main():
     else:
         discord_send(message=report + "\n_(render failed — code still committed)_")
 
-    append_log(f"**Task:** {task_name}\n**Type:** {add_type}\n**Desc:** {task_desc}\n**Art:** {art_desc}\n**Time:** {elapsed:.0f}s | video: {'✓' if video_path else '✗'}")
+    append_log(
+        f"**Task:** {task_name} | **Type:** {add_type} | **Name:** {add_name}\n"
+        f"**Desc:** {task_desc}\n"
+        f"**Result:** {'✓ VIDEO rendered ({Path(video_out).stat().st_size//1024}KB)' if video_path else ('✓ images only (video too small/static)' if image_paths else '✗ render failed')}\n"
+        f"**Time:** {elapsed:.0f}s"
+    )
     print(f"  Done in {elapsed:.0f}s")
 
 
