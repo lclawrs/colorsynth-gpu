@@ -172,6 +172,14 @@ def var_moebius_transform_1418(zLIN, zSIN, t=0.0):
     d = cp.exp(cp.complex(0, t / 6))
     return (a * zLIN + b) / (c * zLIN + d)
 
+def var_moebius_transform_1520(zLIN, zSIN, t=0.0):
+    # Möbius transform with time-varying parameters
+    a = cp.exp(1j * t)
+    b = cp.cos(t)
+    c = cp.sin(t)
+    d = cp.exp(-1j * t)
+    return (a * zLIN + b) / (c * zLIN + d)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -194,6 +202,7 @@ VARIATIONS = [
     ("moebius_transform", var_moebius_transform),
     ("phase_shifting_julia_1357", var_phase_shifting_julia_1357),
     ("moebius_transform_1418", var_moebius_transform_1418),
+    ("moebius_transform_1520", var_moebius_transform_1520),
 ]
 
 # ---------------------------------------------------------------------------
