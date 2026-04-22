@@ -89,3 +89,12 @@
 **Desc:** Phase-shifting colors create a mesmerizing wave effect that pulses and flows, adding a dynamic visual rhythm to the animation.
 **Art:** In phase_shifting, a symphony of colors dances through the screen, their phases subtly out of sync, creating a mesmerizing wave that pulses and flows with a dynamic rhythm that captivates the eye and sets the soul to swaying.
 **Time:** 17s | video: ✗
+
+
+---
+## 2026-04-22 00:04 CDT
+**Task:** phaseShiftingAttractors
+**Type:** variation
+**Desc:** Morphing attractors that shift hues over time, creating a mesmerizing color dance.
+**Art:** In phaseShiftingAttractors, hues morph and shift like the kaleidoscope of a dream, where time itself seems to pulse and weave a mesmerizing color dance, drawing the viewer into a fluid symphony of shifting attractors.
+**Time:** 16s | video: ✗
