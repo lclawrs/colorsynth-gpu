@@ -98,3 +98,12 @@
 **Desc:** Morphing attractors that shift hues over time, creating a mesmerizing color dance.
 **Art:** In phaseShiftingAttractors, hues morph and shift like the kaleidoscope of a dream, where time itself seems to pulse and weave a mesmerizing color dance, drawing the viewer into a fluid symphony of shifting attractors.
 **Time:** 16s | video: ✗
+
+
+---
+## 2026-04-22 00:14 CDT
+**Task:** phaseShifting
+**Type:** colormap
+**Desc:** A phase-shifting color scheme that rotates hues over time, creating a mesmerizing color dance.
+**Art:** In phaseShifting, hues pirouette across the screen in a mesmerizing color ballet, each rotation a whisper of change, weaving a tapestry of shifting light that enchants the eye and soothes the soul.
+**Time:** 16s | video: ✗
