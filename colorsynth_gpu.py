@@ -231,6 +231,12 @@ def var_phase_shifting_attractors_4352(zLIN, zSIN, t=0.0):
     # use t for animation!
     return (zLIN * cp.exp(cp.complex(0, t / 10)) + zSIN * cp.exp(cp.complex(0, t / 15))) / 2
 
+def var_phase_shifting_5358(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    phase_shift = cp.sin(t) * 0.5 + 0.5
+    z = zLIN * cp.exp(1j * cp.angle(zSIN) * phase_shift)
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -266,6 +272,7 @@ VARIATIONS = [
     ("phase_shifting_colors", var_phase_shifting_colors),
     ("phase_shifting_attractors_3414", var_phase_shifting_attractors_3414),
     ("phase_shifting_attractors_4352", var_phase_shifting_attractors_4352),
+    ("phase_shifting_5358", var_phase_shifting_5358),
 ]
 
 # ---------------------------------------------------------------------------
