@@ -206,6 +206,15 @@ def var_power_tower_zoom(zLIN, zSIN, t=0.0):
     z = z * cp.exp(0.1 * cp.cos(t) * cp.pi * 1j)  # Zoom and rotation
     return z
 
+def var_lyapunov_dance(zLIN, zSIN, t=0.0):
+    # Use t for animation!
+    a = 1.9 + 0.1 * cp.cos(t)
+    b = 0.6 + 0.1 * cp.sin(t)
+    z = zLIN * cp.exp(1j * t)
+    for i in range(10):
+        z = a * z + b * cp.abs(z) * cp.exp(1j * cp.angle(z))
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -233,6 +242,7 @@ VARIATIONS = [
     ("rotating_julia_1610", var_rotating_julia_1610),
     ("lyapunov_spirals", var_lyapunov_spirals),
     ("power_tower_zoom", var_power_tower_zoom),
+    ("lyapunov_dance", var_lyapunov_dance),
 ]
 
 # ---------------------------------------------------------------------------
