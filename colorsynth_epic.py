@@ -91,7 +91,7 @@ def qwen_vision(image_path: Path, var_name: str, cmap: str, code_snippet: str) -
 
 def run(cmd, cwd=None):
     return subprocess.run(cmd, shell=True, cwd=cwd or REPO_DIR,
-                          capture_output=True, text=True)
+                          capture_output=True, text=True, check=False)
 
 
 def discord_send(message=None, media=None):
@@ -244,7 +244,7 @@ def design_sequence(descriptions):
 # ── Step 4: Render each section ───────────────────────────────────────────────
 
 def render_section(section, idx):
-    var    = section["variation"]
+    var    = section["variation"].replace("var_", "")  # strip stray prefix Qwen may add
     cmap   = section["colormap"]
     dur    = int(section.get("duration_sec", 20))
     frames = dur * FPS
@@ -431,8 +431,8 @@ def main():
 
     # Commit
     run("git add -A")
-    run(f'git commit -m "epic: {ts} — {len(sequence)}-section {total_dur:.0f}s film"', check=False)
-    run("git push origin master", check=False)
+    run(f'git commit -m "epic: {ts}"')
+    run("git push origin master")
 
     print(f"\nEpic complete. Total time in pipeline.")
 
