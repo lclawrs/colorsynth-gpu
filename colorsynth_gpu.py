@@ -150,6 +150,14 @@ def var_phase_shifting_julia(zLIN, zSIN, t=0.0):
     c = (zSIN + 1j * cp.sin(t)) * 0.5 + 0.75
     return zLIN ** 2 + c
 
+def var_moebius_transform(zLIN, zSIN, t=0.0):
+    # Möbius transform with time-varying parameters
+    a = cp.exp(cp.complex(0, t / 4))
+    b = cp.exp(cp.complex(0, t / 3))
+    c = cp.exp(cp.complex(0, t / 5))
+    d = cp.exp(cp.complex(0, t / 2))
+    return (a * zLIN + b) / (c * zLIN + d)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -169,6 +177,7 @@ VARIATIONS = [
     ("fractal_zoom", var_fractal_zoom),
     ("rotating_julia_params", var_rotating_julia_params),
     ("phase_shifting_julia", var_phase_shifting_julia),
+    ("moebius_transform", var_moebius_transform),
 ]
 
 # ---------------------------------------------------------------------------
