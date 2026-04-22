@@ -127,6 +127,11 @@ def var_phase_shifting(zLIN, zSIN, t=0.0):
     angle = cp.sin(zSIN * 2 + t) * 0.5 + 0.5
     return zLIN * cp.exp(1j * angle * cp.pi)
 
+def var_phase_shifting_1041(zLIN, zSIN, t=0.0):
+    # use t for animation!
+    phase = cp.sin(t) * cp.angle(zLIN) + cp.cos(t) * cp.angle(zSIN)
+    return cp.exp(1j * phase)
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -142,6 +147,7 @@ VARIATIONS = [
     ("twilight_tide", var_twilight_tide),
     ("nebula_cloud", var_nebula_cloud),
     ("phase_shifting", var_phase_shifting),
+    ("phase_shifting_1041", var_phase_shifting_1041),
 ]
 
 # ---------------------------------------------------------------------------
