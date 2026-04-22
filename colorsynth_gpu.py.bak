@@ -107,6 +107,11 @@ def var_vortex(zLIN, zSIN, t=0.0):
     z = (zLIN + zSIN) * 0.5
     return z * z * cp.exp(1j * cp.abs(zLIN - zSIN))
 
+def var_quantum_decay(zLIN, zSIN, t=0.0):
+    decay_rate = 0.05 * (1 + cp.cos(t))
+    z = zLIN * cp.exp(-decay_rate * t) + zSIN * cp.exp(1j * t)
+    return z
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -118,6 +123,7 @@ VARIATIONS = [
     ("spiral",       var_spiral),
     ("tidal",        var_tidal),
     ("vortex",       var_vortex),
+    ("quantum_decay", var_quantum_decay),
 ]
 
 # ---------------------------------------------------------------------------
