@@ -185,6 +185,11 @@ def var_rotating_julia_1550(zLIN, zSIN, t=0.0):
     c = -0.8 + 0.156 * cp.cos(t) + 1j * 0.6 * cp.sin(t)
     return zLIN + c
 
+def var_rotating_julia_1610(zLIN, zSIN, t=0.0):
+    # Rotate Julia set parameters over time
+    c = -0.8 + 0.156 * cp.cos(t) + 1j * 0.6 * cp.sin(t)
+    return zLIN + c
+
 VARIATIONS = [
     ("original",     var_original),
     ("conjugate",    var_conjugate),
@@ -209,6 +214,7 @@ VARIATIONS = [
     ("moebius_transform_1418", var_moebius_transform_1418),
     ("moebius_transform_1520", var_moebius_transform_1520),
     ("rotating_julia_1550", var_rotating_julia_1550),
+    ("rotating_julia_1610", var_rotating_julia_1610),
 ]
 
 # ---------------------------------------------------------------------------

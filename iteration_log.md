@@ -494,3 +494,12 @@
 **Desc:** A Möbius transform warps the plane in a way that beautifully morphs and rotates over time, creating a dynamic and visually stunning animation.
 **Art:** In the fluid dance of "moebius_transform," the plane twists and turns like a dreamscape come to life, where every curve and fold in the Möbius strip weaves a spell of infinite possibility, spinning a web of beauty that endlessly transforms and enchants the eye.
 **Time:** 27s | video: ✓
+
+
+---
+## 2026-04-22 06:16 CDT
+**Task:** rotating julia params
+**Type:** variation
+**Desc:** Julia parameters rotate over time, creating a dynamic and ever-changing pattern.
+**Art:** Rotating Julia parameters paint a mesmerizing dance of light and shadow, where each twist and turn reveals new complexities in an endlessly evolving pattern of beauty.
+**Time:** 16s | video: ✓
