@@ -179,3 +179,12 @@
 **Desc:** A phasor morph animation that evolves smoothly over time, creating a pulsating, swirling effect.
 **Art:** In phasor_morph, time weaves an ever-evolving tapestry of light, where swirling hues pulse and morph in a fluid dance, spinning the static into a vibrant, ever-changing symphony of color.
 **Time:** 15s | video: ✗
+
+
+---
+## 2026-04-22 01:34 CDT
+**Task:** phaseShiftingAttractors
+**Type:** variation
+**Desc:** Morphing attractors that shift phases over time, creating a dynamic and ever-evolving pattern.
+**Art:** In phaseShiftingAttractors, morphing attractors dance through a fluid symphony of color and form, their phases shifting in a mesmerizing waltz of perpetual transformation, weaving an ever-unfolding tapestry of visual poetry.
+**Time:** 17s | video: ✗
