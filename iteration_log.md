@@ -215,3 +215,12 @@
 **Desc:** A Julia set that warps and morphs over time, creating dynamic and ever-changing patterns.
 **Art:** In timeWarpedJulia, the Julia set dances a fluid waltz, its patterns warping and morphing like ethereal clouds caught in a perpetual twilight, each frame a new symphony of fractal beauty.
 **Time:** 16s | video: ✗
+
+
+---
+## 2026-04-22 02:14 CDT
+**Task:** phaseShifting
+**Type:** colormap
+**Desc:** A phase-shifting animation that smoothly transitions between different color palettes, creating a mesmerizing visual effect.
+**Art:** Phase-shifting weaves a kaleidoscope of colors in liquid motion, captivating the eye with its smooth transitions and mesmerizing palette dance, as if time itself were bending to the rhythm of hue and tone.
+**Time:** 15s | video: ✗
